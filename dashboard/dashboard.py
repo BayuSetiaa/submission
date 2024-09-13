@@ -8,7 +8,7 @@ st.set_page_config(page_title="E-Commerce Dashboard", layout="wide")
 
 # Mengimpor dataset
 def load_data():
-    main_data = pd.read_csv('main_data.csv') 
+    main_data = pd.read_csv('dashboard/main_data.csv') 
     return main_data
 
 # Preprocessing data
