@@ -7,13 +7,9 @@ import seaborn as sns
 st.set_page_config(page_title="E-Commerce Dashboard", layout="wide")
 
 # Mengimpor dataset
-def load_data(uploaded_file):
-    if uploaded_file is not None:
-        main_data = pd.read_csv(uploaded_file)
-        return main_data
-    else:
-        st.error("Silakan unggah file CSV terlebih dahulu.")
-        return None
+def load_data():
+    main_data = pd.read_csv('dashboard/main_data.csv') 
+    return main_data
 
 # Preprocessing data
 def preprocess_data(main_data):
@@ -86,20 +82,16 @@ def display_top_products(main_data):
 def main():
     st.title("E-Commerce Dashboard")
     
-    # Upload file
-    uploaded_file = st.file_uploader("Unggah file CSV", type="csv")
-    
     # Load data
-    main_data = load_data(uploaded_file)
+    main_data = load_data()
     
-    if main_data is not None:
-        # Preprocess data
-        main_data = preprocess_data(main_data)
+    # Preprocess data
+    main_data = preprocess_data(main_data)
 
-        # Display analyses
-        display_retention_analysis(main_data)
-        display_sales_trends(main_data)
-        display_top_products(main_data)
+    # Display analyses
+    display_retention_analysis(main_data)
+    display_sales_trends(main_data)
+    display_top_products(main_data)
 
 if __name__ == "__main__":
     main()
