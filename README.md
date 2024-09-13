@@ -41,8 +41,8 @@ submission/
 1. **Kloning Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/BayuSetiaa/submission.git
+   cd submission
    ```
 
 2. **Siapkan Lingkungan Virtual (Opsional tapi Direkomendasikan):**
